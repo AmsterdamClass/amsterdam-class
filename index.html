@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amsterdam Class - Curso de Bartender em Belo Horizonte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .cocktail-card {
+            transition: all 0.3s ease;
+        }
+        
+        .cocktail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .flair-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            font-size: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-cocktail text-2xl text-amber-400 mr-2"></i>
+                    <span class="title-font text-2xl font-bold">Amsterdam <span class="text-amber-400">Class</span></span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#course" class="nav-link">Curso</a>
+                    <a href="#testimonials" class="nav-link">Depoimentos</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-amber-400 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2">Início</a>
+                <a href="#about" class="block py-2">Sobre</a>
+                <a href="#course" class="block py-2">Curso</a>
+                <a href="#testimonials" class="block py-2">Depoimentos</a>
+                <a href="#contact" class="block py-2">Contato</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="title-font text-5xl md:text-7xl font-bold mb-6">
+                Domine a <span class="text-amber-400">Arte</span> do Bartending
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                Com Mackenzie na Amsterdam Class, transforme sua paixão por drinks em uma carreira promissora em Belo Horizonte.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="btn-primary py-4 px-8 rounded-full font-bold text-gray-900">
+                    Inscreva-se Agora <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#course" class="border-2 border-amber-400 py-4 px-8 rounded-full font-bold text-amber-400 hover:bg-amber-400 hover:text-gray-900 transition">
+                    Conheça o Curso
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl font-bold mb-4">
+                    Sobre a <span class="text-amber-400">Amsterdam Class</span>
+                </h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Mackenzie bartending" 
+                         class="rounded-lg shadow-2xl w-full h-auto">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="title-font text-3xl font-bold mb-6">
+                        Mackenzie, sua instrutora
+                    </h3>
+                    <p class="mb-6 text-lg">
+                        Com mais de 10 anos de experiência em bares renomados de Amsterdã e Belo Horizonte, Mackenzie traz para você toda a expertise internacional combinada com o conhecimento do mercado local.
+                    </p>
+                    <p class="mb-6 text-lg">
+                        A Amsterdam Class nasceu da paixão por mixologia e do desejo de formar profissionais completos, que entendam desde as técnicas clássicas até as tendências mais inovadoras do bartending.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-award text-amber-400 mr-2"></i>
+                            <span>Certificação Internacional</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-glass-cheers text-amber-400 mr-2"></i>
+                            <span>Método Prático</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-network-wired text-amber-400 mr-2"></i>
+                            <span>Rede de Contatos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Course Highlights -->
+    <section id="course" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl font-bold mb-4">
+                    O que você vai <span class="text-amber-400">aprender</span>
+                </h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10 mb-16">
+                <div class="cocktail-card bg-gray-800 p-8 rounded-lg text-center">
+                    <div class="flair-icon">
+                        <i class="fas fa-shaker"></i>
+                    </div>
+                    <h3 class="title-font text-2xl font-bold mb-4">Técnicas Profissionais</h3>
+                    <p>
+                        Shaking, stirring, layering, flaming e todas as técnicas essenciais para preparar drinks perfeitos.
+                    </p>
+                </div>
+                
+                <div class="cocktail-card bg-gray-800 p-8 rounded-lg text-center">
+                    <div class="flair-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3 class="title-font text-2xl font-bold mb-4">Conhecimento de Bebidas</h3>
+                    <p>
+                        Profundo entendimento de destilados, vinhos, cervejas e ingredientes para mixologia.
+                    </p>
+                </div>
+                
+                <div class="cocktail-card bg-gray-800 p-8 rounded-lg text-center">
+                    <div class="flair-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="title-font text-2xl font-bold mb-4">Atendimento ao Cliente</h3>
+                    <p>
+                        Como criar experiências memoráveis e construir relacionamentos com seus clientes.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="cocktail-card bg-gray-800 p-8 rounded-lg text-center">
+                    <div class="flair-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="title-font text-2xl font-bold mb-4">Gestão de Bar</h3>
+                    <p>
+                        Controle de estoque, precificação de drinks e gestão financeira básica.
+                    </p>
+                </div>
+                
+                <div class="cocktail-card bg-gray-800 p-8 rounded-lg text-center">
+                    <div class="flair-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="title-font text-2xl font-bold mb-4">Flair Bartending</h3>
+                    <p>
+                        Técnicas de malabarismo com garrafas para impressionar seus clientes.
+                    </p>
+                </div>
+                
+                <div class="cocktail-card bg-gray-800 p-8 rounded-lg text-center">
+                    <div class="flair-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="title-font text-2xl font-bold mb-4">Oportunidades</h3>
+                    <p>
+                        Acesso exclusivo a vagas em bares parceiros após a conclusão do curso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Course Structure -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl font-bold mb-4">
+                    Estrutura do <span class="text-amber-400">Curso</span>
+                </h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="title-font text-2xl font-bold mb-4 text-amber-400">
+                        <i class="fas fa-calendar-alt mr-2"></i> Duração
+                    </h3>
+                    <p class="text-lg">
+                        6 semanas intensivas, com aulas teóricas e práticas em nosso espaço totalmente equipado no coração de Belo Horizonte.
+                    </p>
+                </div>
+                
+                <div class="mb-12">
+                    <h3 class="title-font text-2xl font-bold mb-4 text-amber-400">
+                        <i class="fas fa-clock mr-2"></i> Carga Horária
+                    </h3>
+                    <p class="text-lg">
+                        80 horas totais, divididas em 4 encontros semanais de 4 horas cada (segundas, quartas, sextas e sábados).
+                    </p>
+                </div>
+                
+                <div class="mb-12">
+                    <h3 class="title-font text-2xl font-bold mb-4 text-amber-400">
+                        <i class="fas fa-graduation-cap mr-2"></i> Certificação
+                    </h3>
+                    <p class="text-lg">
+                        Ao final do curso, você receberá um certificado reconhecido nacionalmente e internacionalmente, com selo da Amsterdam Class.
+                    </p>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="#contact" class="btn-primary py-4 px-8 rounded-full font-bold text-gray-900 inline-block">
+                        Quero me Inscrever <i class="fas fa-glass-cheers ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl font-bold mb-4">
+                    O que dizem nossos <span class="text-amber-400">alunos</span>
+                </h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-lg border border-amber-400 border-opacity-30">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" 
+                             alt="Aluna" 
+                             class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Carolina Mendes</h4>
+                            <p class="text-amber-400 text-sm">Ex-aluna, agora no Bar da Praça</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "A Amsterdam Class mudou minha vida! Em 3 meses após o curso já estava trabalhando em um dos melhores bares de BH. Mackenzie é uma professora incrível!"
+                    </p>
+                    <div class="mt-4 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-lg border border-amber-400 border-opacity-30">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" 
+                             alt="Aluno" 
+                             class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Rafael Costa</h4>
+                            <p class="text-amber-400 text-sm">Bartender no Amsterdam Pub</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "O curso superou todas minhas expectativas. A parte de gestão de bar foi essencial para eu abrir meu próprio negócio. Recomendo demais!"
+                    </p>
+                    <div class="mt-4 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-lg border border-amber-400 border-opacity-30">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                             alt="Aluna" 
+                             class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Juliana Almeida</h4>
+                            <p class="text-amber-400 text-sm">Bartender em eventos</p>
+                        </div>
+                    </div>
+                    <p class="italic">
+                        "A metodologia prática da Amsterdam Class é fantástica. Saí do curso preparada para o mercado e com um portfólio de drinks impressionante."
+                    </p>
+                    <div class="mt-4 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section class="py-12 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="title-font text-4xl font-bold mb-4">
+                    Nosso <span class="text-amber-400">Espaço</span>
+                </h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Espaço Amsterdam Class" 
+                         class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                         alt="Aula prática" 
+                         class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Bar completo" 
+                         class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1586&q=80" 
+                         alt="Ingredientes" 
+                         class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl font-bold mb-4">
+                    Fale <span class="text-amber-400">Conosco</span>
+                </h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="title-font text-2xl font-bold mb-6">
+                        Pronto para começar sua jornada no bartending?
+                    </h3>
+                    <p class="mb-8 text-lg">
+                        Preencha o formulário ao lado ou entre em contato diretamente por um dos nossos canais:
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Endereço</h4>
+                                <p>Av. Afonso Pena, 1500 - Centro, Belo Horizonte - MG</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-amber-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Telefone</h4>
+                                <p>(31) 98765-4321</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p>contato@amsterdamclass.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fab fa-whatsapp text-amber-400 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">WhatsApp</h4>
+                                <p>(31) 98765-4321</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="text-amber-400 hover:text-white text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-amber-400 hover:text-white text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-amber-400 hover:text-white text-2xl">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-gray-800 p-8 rounded-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-medium">Seu Nome</label>
+                            <input type="text" id="name" 
+                                   class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-medium">Seu Email</label>
+                            <input type="email" id="email" 
+                                   class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block mb-2 font-medium">Seu Telefone</label>
+                            <input type="tel" id
+</html>
